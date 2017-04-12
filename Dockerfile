@@ -16,4 +16,7 @@ RUN curl -L -O https://www.atlassian.com/software/jira/downloads/binary/atlassia
 RUN chmod a+x atlassian-jira-software-${JIRA_VERSION}-x64.bin
 RUN ./atlassian-jira-software-${JIRA_VERSION}-x64.bin -q -varfile response.varfile
 
+# Volume for JIRA data
+VOLUME /var/atlassian/application-data/jira/
+
 EXPOSE 8080
