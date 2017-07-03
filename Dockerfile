@@ -20,3 +20,5 @@ RUN ./atlassian-jira-software-${JIRA_VERSION}-x64.bin -q -varfile response.varfi
 VOLUME /var/atlassian/application-data/jira/
 
 EXPOSE 8080
+
+CMD ["/opt/atlassian/jira/bin/start-jira.sh"]
