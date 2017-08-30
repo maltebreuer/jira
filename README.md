@@ -1,3 +1,3 @@
 # JIRA Software
 
-Dockerfile for JIRA Software
+Dockerfile for JIRA Software.
