@@ -21,4 +21,4 @@ VOLUME /var/atlassian/application-data/jira/
 
 EXPOSE 8080
 
-CMD ["/opt/atlassian/jira/bin/start-jira.sh"]
+CMD ["/opt/atlassian/jira/bin/start-jira.sh", "-fg"]
