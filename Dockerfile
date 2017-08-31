@@ -37,7 +37,7 @@ RUN apk update && \
     apk add curl && \
     apk add gzip
 
-ENV JIRA_VERSION 7.3.0
+ENV JIRA_VERSION 7.4.3
 
 # Add the varfile
 ADD response.varfile /response.varfile
@@ -53,8 +53,8 @@ RUN mkdir -p /opt && \
 # Run the installer
 RUN ./atlassian-jira-software-${JIRA_VERSION}-x64.bin -q -varfile response.varfile
 
-# Ensure that the user
-RUN cat /etc/passwd
+# Fix problems with Alpine + JIRA installer
+# Ensure that the dedicated JIRA user is available
 RUN adduser -D -H jira
 
 # Ensure correct user permissions
