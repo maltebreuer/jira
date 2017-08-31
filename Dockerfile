@@ -42,16 +42,15 @@ ENV JIRA_VERSION 7.4.3
 # Add the varfile
 ADD response.varfile /response.varfile
 
-# Download JIRA
-RUN curl --progress-bar -L -O https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-${JIRA_VERSION}-x64.bin
-RUN chmod a+x atlassian-jira-software-${JIRA_VERSION}-x64.bin
-
 # Necessary things for the JIRA installer to work
 RUN mkdir -p /opt && \
     apk add bash
 
-# Run the installer
-RUN ./atlassian-jira-software-${JIRA_VERSION}-x64.bin -q -varfile response.varfile
+# Download JIRA
+RUN curl --progress-bar -L -O https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-${JIRA_VERSION}-x64.bin && \
+    chmod a+x atlassian-jira-software-${JIRA_VERSION}-x64.bin && \
+    ./atlassian-jira-software-${JIRA_VERSION}-x64.bin -q -varfile response.varfile && \
+    rm /atlassian-jira-software-${JIRA_VERSION}-x64.bin
 
 # Fix problems with Alpine + JIRA installer
 # Ensure that the dedicated JIRA user is available
