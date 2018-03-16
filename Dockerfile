@@ -22,6 +22,10 @@ RUN apk add glibc-bin-2.27-r0.apk
 
 RUN ./atlassian-jira-software-${JIRA_VERSION}-x64.bin -q -varfile response.varfile
 
+RUN adduser -D -H jira
+RUN chown -R jira /opt/atlassian && \
+    chown -R jira /var/atlassian
+
 # Volume for JIRA data
 VOLUME /var/atlassian/application-data/jira/
 
