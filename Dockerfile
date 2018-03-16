@@ -1,9 +1,10 @@
 FROM alpine:3.7
 
+# JIRA Version that is installed
+ENV JIRA_VERSION 7.6.4
+
 RUN apk update && \
     apk add curl bash gzip
-
-ENV JIRA_VERSION 7.4.3
 
 # Add the varfile
 ADD response.varfile /response.varfile
