@@ -1,5 +1,5 @@
-#install4j response file for JIRA Software 7.3.0
-#Thu Aug 31 07:14:07 GMT 2017
+#install4j response file for JIRA Software 7.9.0
+#Fri Apr 20 17:34:21 GMT 2018
 launch.application$Boolean=false
 rmiPort$Long=8005
 app.jiraHome=/var/atlassian/application-data/jira
