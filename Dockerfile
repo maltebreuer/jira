@@ -1,7 +1,7 @@
 FROM alpine:3.7
 
 # JIRA Version that is installed
-ENV JIRA_VERSION 7.10.0
+ENV JIRA_VERSION 7.11.1
 
 RUN apk update && \
     apk add curl bash gzip
