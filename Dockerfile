@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.8
 
 # JIRA Version that is installed
 ENV JIRA_VERSION 7.11.1
