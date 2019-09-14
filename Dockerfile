@@ -1,10 +1,10 @@
 FROM alpine:3.8
 
 # JIRA Version that is installed
-ENV JIRA_VERSION 7.13.0
+ENV JIRA_VERSION 8.4.0
 
 RUN apk update && \
-    apk add curl bash gzip
+    apk add curl bash gzip ttf-dejavu
 
 # Add glibc
 RUN apk --no-cache add ca-certificates wget
